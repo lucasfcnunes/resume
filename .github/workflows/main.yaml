@@ -10,14 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6.0.2
       - uses: cachix/install-nix-action@v31.10.6
-      - name: Install dependencies
-        run: nix develop --command -- task install
-      - name: Run build
-        run: nix develop --command -- task build
-      - name: Run render
-        run: nix develop --command -- xvfb-run npx electron-pdf $GITHUB_WORKSPACE/dist/index.html $GITHUB_WORKSPACE/dist/resume.pdf
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4.0.0
+      - run: nix develop --command -- task install
+      - run: nix develop --command -- task build
+      - run: nix develop --command -- task render-pdf
+      - uses: peaceiris/actions-gh-pages@v4.0.0
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

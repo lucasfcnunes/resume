@@ -1,8 +1,34 @@
 version: "3"
+vars:
+  GIT_ROOT_PATH:
+    sh: git rev-parse --show-toplevel
 tasks:
+  pwd: pwd
   install:
     cmds:
       - npm install
+  render-pdf:
+    # TODO: improve this task
+    dir: "{{.GIT_ROOT_PATH}}/dist/"
+    env:
+      DISPLAY: :9.0
+    sources:
+      - ./index.html
+    generates:
+      - ./resume.pdf
+    vars:
+      RENDER_PDF_CMD_PREFIX:
+        sh: |
+          if command -v xvfb-run >/dev/null 2>&1; then
+            echo 'xvfb-run'
+          elif command -v nix >/dev/null 2>&1; then
+            echo 'nix develop --command -- xvfb-run'
+          else
+            echo ''
+          fi
+    cmds:
+      - >-
+        {{.RENDER_PDF_CMD_PREFIX}} npx electron-pdf './index.html' './resume.pdf'
   build:
     cmds:
       - npx parcel build --public-url "./" --no-scope-hoist src/index.html
