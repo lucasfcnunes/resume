@@ -2,7 +2,7 @@ version: "3"
 tasks:
   install:
     cmds:
-      - yarn
+      - npm install
   build:
     cmds:
       - npx parcel build --public-url "./" --no-scope-hoist src/index.html
@@ -11,7 +11,7 @@ tasks:
       - npx parcel serve src/index.html
   upgrade:
     cmds:
-      - yarn upgrade --latest
+      - npm update
   clean:
     cmds:
       - rm -rf dist
@@ -24,7 +24,7 @@ tasks:
     cmds:
       - rm -rf node_modules
       - rm -rf elm-stuff
-      - yarn
+      - task: install
   lint:
     cmds:
       - npx elm-analyse

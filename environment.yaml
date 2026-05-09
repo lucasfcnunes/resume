@@ -4,9 +4,11 @@ channels:
   - conda-forge
 dependencies:
   - go-task
+  - pre-commit
   - nodejs
-  - yarn
+  - elm
+  # INFO: nodejs package build
   - python
-  - pip
-  - pip:
-      - pre-commit
+  - make
+  - setuptools
+  - cxx-compiler

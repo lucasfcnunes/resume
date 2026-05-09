@@ -32,7 +32,6 @@
           with pkgs;
           [
             nodejs
-            nodePackages.yarn
             go-task
             # x11-xkb-utils
             # x11-apps
