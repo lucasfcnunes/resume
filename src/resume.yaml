@@ -1,184 +1,176 @@
-{
-  "basics": {
-    "name": "Kristoffer Dalby",
-    "label": "Software Engineer",
-    "picture": "",
-    "email": "kristoffer@dalby.cc",
-    "phone": "+47 456 73 429",
-    "website": "https://kradalby.no",
-    "summary": "",
-    "location": {
-      "address": "",
-      "postalCode": "2312RG",
-      "city": "Leiden",
-      "countryCode": "NL",
-      "region": ""
-    },
-    "profiles": [
-      {
-        "network": "GitHub",
-        "username": "kradalby",
-        "url": "github.com/kradalby"
-      },
-      {
-        "network": "linkedin",
-        "username": "kradalby",
-        "url": "linkedin.com/in/kradalby"
-      }
-    ]
-  },
-  "work": [
-    {
-      "company": "Tailscale inc",
-      "position": "Member of Technical Staff",
-      "website": "https://tailscale.com",
-      "startDate": "2022-09",
-      "endDate": "present",
-      "summary": "Working on Tailscale and Headscale",
-      "highlights": []
-    },
-    {
-      "company": "G-Research",
-      "position": "Site Reliability Engineer",
-      "website": "https://www.gresearch.co.uk",
-      "startDate": "2019-09",
-      "endDate": "2022-08",
-      "summary": "Helping teams improving their observability and reliability",
-      "highlights": []
-    },
-    {
-      "company": "European Space Agency",
-      "position": "Software Engineer - Trainee",
-      "website": "https://www.esa.int",
-      "startDate": "2017-09",
-      "endDate": "2019-08",
-      "summary": "Fullstack developer working on internal platforms in ESA IT",
-      "highlights": []
-    },
-    {
-      "company": "Knowit Objectnet",
-      "position": "Developer - Summer job",
-      "website": "http://knowit.no",
-      "startDate": "2016-06",
-      "endDate": "2016-08",
-      "summary": "Fullstack developer creating SaaS applications in Scala and React.",
-      "highlights": []
-    },
-    {
-      "company": "Uninett Sigma2",
-      "position": "Developer - Summer job",
-      "website": "http://uninett.no",
-      "startDate": "2015-06",
-      "endDate": "2015-08",
-      "summary": "Research and development of a web based terminal application for usage and administration of high performance clusters.",
-      "highlights": []
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "dfekt LAN, PolarParty, Casual Gaming, The Gathering",
-      "position": "Technical crew",
-      "website": "http://gathering.org",
-      "startDate": "2011-01",
-      "endDate": "present",
-      "summary": "Worked with tech, network, economy and security. Parties ranged from 200 to 5000 participants.",
-      "highlights": [
-        "dfekt LAN: Leader and tech, 5 years",
-        "Casual gaming: Tech lead, 4 years",
-        "PolarParty: Tech/Network, 3 years",
-        "The Gathering: Information Desk, 2 years"
-      ]
-    },
-    {
-      "organization": "Student organization, Online",
-      "position": "SysAdmin/Developer",
-      "website": "https://online.ntnu.no",
-      "startDate": "2012-08",
-      "endDate": "2016-06",
-      "summary": "Various position and responsibilities",
-      "highlights": [
-        "Email administration",
-        "Economic management",
-        "Responsible for 15+ Linux and Windows servers",
-        "Planning US trip for 30+ students"
-      ]
-    }
-  ],
-  "education": [
-    {
-      "institution": "Norwegian University of Science and Technology",
-      "area": "Informatics",
-      "studyType": "Master",
-      "startDate": "2012-08",
-      "endDate": "2017-06",
-      "courses": [],
-      "summary": "5 year (master + bachelor) degree with focus on software development, algorithms, process. Courses included security, AI, distributed data, networking and UX."
-    },
-    {
-      "institution": "Universidad Politécnica de Madrid",
-      "area": "Software Engineering",
-      "studyType": "Exchange",
-      "startDate": "2016-01",
-      "endDate": "2016-06",
-      "courses": [],
-      "summary": "Software engineering master with a strong focus on an international environment, courses included concurrent systems (Erlang) and agent based development"
-    }
-  ],
-  "skills": [
-    {
-      "name": "Backend development",
-      "level": "Proficient",
-      "keywords": ["Go", "Swift", "Python"]
-    },
-    {
-      "name": "Frontend development",
-      "level": "Proficient",
-      "keywords": ["Elm", "React", "JavaScript", "HTML", "CSS"]
-    },
-    {
-      "name": "DevOps",
-      "level": "Operations",
-      "keywords": [
-        "Linux",
-        "Ansible",
-        "Terraform",
-        "Kubernetes",
-        "Drone/Gitlab CI"
-      ]
-    },
-    {
-      "name": "App development",
-      "level": "Played with",
-      "keywords": ["Swift/iOS", "Flutter/Android"]
-    }
-  ],
-  "languages": [
-    {
-      "language": "Norwegian",
-      "fluency": "Native"
-    },
-    {
-      "language": "English",
-      "fluency": "Fluent"
-    }
-  ],
-  "interests": [
-    {
-      "name": "LAN Parties",
-      "keywords": ["Networking", "Social activity", "Community"]
-    },
-    {
-      "name": "Traveling",
-      "keywords": ["Backpacking"]
-    },
-    {
-      "name": "Photography",
-      "keywords": []
-    },
-    {
-      "name": "Brewing",
-      "keywords": []
-    }
-  ],
-  "references": []
-}
+basics:
+  name: Lucas Fernando C. Nunes
+  label: IT Specialist
+  picture: ""
+  email: contact@lucasfcnunes.com
+  phone: "+55 21 97431-1445"
+  website: https://lucasfcnunes.com
+  summary: ""
+  location:
+    address: ""
+    postalCode: ""
+    city: Rio de Janeiro, RJ
+    countryCode: BR
+    region: ""
+  profiles:
+    - network: GitHub
+      username: lucasfcnunes
+      url: github.com/lucasfcnunes
+    - network: linkedin
+      username: lucasfcnunes
+      url: linkedin.com/in/lucasfcnunes
+work:
+  - company: LUCASFCNUNES
+    position: Owner
+    website: https://lucasfcnunes.com
+    startDate: 2020-06
+    endDate: present
+    summary: Consulting, B2B contracting, freelancing and open source contributions.
+    highlights: []
+  - company: Incentive.me
+    position: IT Manager/Specialist
+    website: https://incentive.me
+    startDate: 2020-06
+    endDate: 2025-08
+    summary: IT [Specialist] Manager of IT Infrastructure, IT Security, BI and Data Engineering teams. Responsible for the architecture, development of internal tools and infrastructure.
+    highlights:
+      - IT Specialist focusing in promoting top IT Infrastructure, IT Security and Data Analysis/Engineering.
+      - Startup environment with 100+ employees and 4 teams under my management.
+      - Hands-on role with a lot of technical involvement in the projects and processes of the teams.
+      - Heavy FOSS usage in the stack for budget optimization.
+      - Leadership, communication, problem solving, project management (with 4 teams with at least 2 members each simultaneously).
+      - Architected and implemented data pipeline using Airflow, dbt and ClickHouse, etc which is responsible for the processing of all the company's data and is used by multiple teams for analytics and reporting.
+      - Refactoring core things from Manual to IaC
+  - company: Procter & Gamble (P&G)
+    position: Technician Intern
+    website: https://pg.com
+    startDate: 2016-08
+    endDate: 2018-08
+    summary: Responsible for the development of internal tools and automation of processes using Python and PowerBI.
+    highlights:
+      - Sole author/developer of an automated Zebra Printer GHS solution which was implemented in multiple plants.
+      - Automation/spreadsheet geek/go-to.
+      - Brazilian Touchless Production initiative member.
+      - Master Production Schedule (MPS) optimization research.
+      - In touch with SAP, HMI and production Ladder code.
+volunteer:
+  - organization: redash
+    position: Member and contributor
+    website: https://redash.io
+    startDate: 2022-00
+    endDate: present
+    summary: Project with 28k+ stars on GitHub, a web based data visualization and dashboarding tool.
+    highlights: []
+education:
+  - institution: Universidade Federal do Rio de Janeiro (POLI-UFRJ)
+    area: Electronics and Computer Engineering
+    studyType: BA
+    startDate: 2017-01
+    endDate: 2021-01 (never finished)
+    courses: []
+      # - All calculus and physics (theoretical and experimental) courses
+    summary:
+  - institution: Centro Federal de Educação Tecnológica (CEFET-RJ)
+    area: Electronics
+    studyType: Technician
+    startDate: 2013-01
+    endDate: 2016-12
+    courses:
+      - PLC/PIC/Arduino (C/Assembly/Ladder) programming
+      - Assembly language
+      - Digital electronics
+      - much more...
+    summary:
+skills:
+  - name: IT Infrastructure
+    level: Proficient
+    keywords:
+      - Infrastructure as Code (Crossplane/Terraform/Ansible)
+      - Corporate architectures with heavy FOSS usage
+      - IT Budget Management/FinOps
+      - Kubernetes/Docker
+      - Linux
+      - GCP/Azure
+      - VMs (including Proxmox, Windows and MacOS)
+      - DNS/Networking
+      - Grafana/Prometheus/OTel
+      - OpenSearch/ES
+      - Cilium/Hubble/Tetragon/eBPF
+      - GitHub Actions
+      - Zero Trust
+      - Nix (recently)
+  - name: IT Security
+    level: Proficient
+    keywords:
+      - Incident response/Vulnerability management
+      - Security monitoring
+      - OWASP
+      - SAST/DAST
+      - Threat modeling
+      - Risk assessment
+      - Penetration testing
+      - Security architecture
+      - SOC2/ISO27001
+      - Onboarding/Offboarding
+  - name: Data Engineering
+    level: Proficient
+    keywords:
+      - Airflow/Google Composer
+      - MySQL/PostgreSQL/ClickHouse/Mongo
+      - dbt
+      - Data modeling
+      - Data pipelines
+      - Spark
+      - DataHub
+      - DB Tuning/Optimization/Restoration
+  - name: BI
+    level: Proficient
+    keywords:
+      - PowerBI (PowerQuery, DAX, etc)
+      - Python/R
+      - Redash/Metabase
+      - SQL/Excel
+      - Shareholder reporting
+  - name: Backend Development
+    level: Advanced reviewing
+    keywords:
+      - Designing and reviewing backend systems and APIs
+      - Python
+      - Go
+      - JS/TS
+languages:
+  - language: Portuguese (BR)
+    fluency: Native
+  - language: English
+    fluency: Fluent
+  - language: Japanese
+    fluency: Intermediate
+  - language: Latin
+    fluency: Basic
+interests:
+  - name: FOSS contributing
+    keywords:
+      - Open source software
+      - Community
+      - Giving back
+  - name: STEM
+    keywords:
+      - Science
+      - Technology
+      - Engineering
+      - Mathematics
+  - name: Giving "TED Talks" on
+    keywords:
+      - Nix/NixOS
+      - Kubernetes
+      - Tailscale/Headscale
+      - Isovalent/Cilium
+      - Lean 4
+      - Pony
+      - FOSS in general
+      - Quantum computing
+  - name: Hiking (just a noob - for now)
+    keywords:
+      - Nature
+      - Outdoors
+references: []

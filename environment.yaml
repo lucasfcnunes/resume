@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Microsoft/vscode-python/master/schemas/conda-environment.json
+name: resume
+channels:
+  - conda-forge
+dependencies:
+  - go-task
+  - nodejs
+  - yarn
+  - python
+  - pip
+  - pip:
+      - pre-commit

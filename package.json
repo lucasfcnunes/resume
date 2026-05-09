@@ -1,12 +1,12 @@
 {
-  "author": "Kristoffer Dalby",
+  "author": "Lucas Fernando C. Nunes",
   "name": "resume",
   "version": "1.0.0",
-  "description": "Kristoffer Dalby's resume",
+  "description": "Lucas Fernando C. Nunes' resume",
   "scripts": {
     "test": "elm-test"
   },
-  "repository": "git+https://github.com/kradalby/resume.git",
+  "repository": "git+https://github.com/lucasfcnunes/resume.git",
   "license": "MIT",
   "private": true,
   "sideEffects": false,

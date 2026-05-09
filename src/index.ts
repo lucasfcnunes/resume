@@ -32,12 +32,12 @@ library.add(
   faTwitter,
   faWhatsapp,
   faTelegram,
-  faLinkedin
+  faLinkedin,
 );
 // This will look continously to convert i-fa to svg
 dom.watch();
 
-import resume from "./resume.json";
+import resume from "./resume.yaml";
 import { Elm } from "./Main.elm";
 
 document.addEventListener("DOMContentLoaded", function () {

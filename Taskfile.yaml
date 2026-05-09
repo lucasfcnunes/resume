@@ -1,29 +1,32 @@
-
-
-install:
-	yarn
-
-build:
-	npx parcel build --public-url "./" --no-scope-hoist src/index.html
-
-dev:
-	npx parcel serve src/index.html
-
-upgrade:
-	yarn upgrade --latest
-
-clean:
-	rm -rf dist
-
-clean-all: clean
-	rm -rf node_modules .cache .parcel-cache
-
-reinstall:
-	rm -rf node_modules
-	rm -rf elm-stuff
-	yarn
-
-lint:
-	npx elm-analyse
-	npx elm-format --validate src/
-	npx stylelint src/**.scss
+version: "3"
+tasks:
+  install:
+    cmds:
+      - yarn
+  build:
+    cmds:
+      - npx parcel build --public-url "./" --no-scope-hoist src/index.html
+  dev:
+    cmds:
+      - npx parcel serve src/index.html
+  upgrade:
+    cmds:
+      - yarn upgrade --latest
+  clean:
+    cmds:
+      - rm -rf dist
+  clean-all:
+    deps:
+      - clean
+    cmds:
+      - rm -rf node_modules .cache .parcel-cache
+  reinstall:
+    cmds:
+      - rm -rf node_modules
+      - rm -rf elm-stuff
+      - yarn
+  lint:
+    cmds:
+      - npx elm-analyse
+      - npx elm-format --validate src/
+      - npx stylelint src/**.scss

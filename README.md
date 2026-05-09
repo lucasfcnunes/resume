@@ -1,31 +1,32 @@
 # resume
 
-[resume.kradalby.no](https://resume.kradalby.no/)
+\*based on the [MIT licensed] work in https://github.com/kradalby/resume. Thanks @kradalby!
 
-[PDF](https://resume.kradalby.no/resume.pdf)
+[resume.lucasfcnunes.com](https://resume.lucasfcnunes.com/)
 
-This is my current resume and it is made with Elm and [Elm CSS](https://github.com/rtfeldman/elm-css). It is built in docker, generating static HTML and CSS and a PDF.
+[PDF](https://resume.lucasfcnunes.com/resume.pdf)
 
-This project is a result of trying to learn Elm CSS and revamping my resume :resume:
+This is my current resume and it is made with Elm and [Elm CSS](https://github.com/rtfeldman/elm-css).
 
 ## Building
 
 Build locally:
 
-    make install
-    make build
+    task install
+    task build
 
-Build Docker container:
+<!-- TODO: bring back docker build? -->
+<!-- Build Docker container:
 
-    docker build -t <TAG> .
+    docker build -t <TAG> . -->
 
 ## Development
 
 Run dev server
 
-    make install
-    make dev
+    task install
+    task dev
 
 ## Lint
 
-    make lint
+    task lint
