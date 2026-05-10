@@ -450,6 +450,12 @@ countryCodeToCountry countryCode =
         "UK" ->
             "United Kingdom"
 
+        "US" ->
+            "United States"
+
+        "BR" ->
+            "Brazil"
+
         _ ->
             "Unknown country code"
 
