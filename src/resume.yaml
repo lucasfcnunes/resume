@@ -8,7 +8,7 @@ basics:
   summary: ""
   location:
     address: ""
-    postalCode: ""
+    postalCode: "21"
     city: Rio de Janeiro, RJ
     countryCode: BR
     region: ""
@@ -28,13 +28,13 @@ work:
     summary: Consulting, B2B contracting, freelancing and open source contributions.
     highlights: []
   - company: Incentive.me
-    position: IT Manager/Specialist
+    position: IT Supervisor
     website: https://incentive.me
     startDate: 2020-06
     endDate: 2025-08
-    summary: IT [Specialist] Manager of IT Infrastructure, IT Security, BI and Data Engineering teams. Responsible for the architecture, development of internal tools and infrastructure.
+    summary: IT Supervisor of IT Infrastructure, IT Security, BI and Data Engineering teams. Responsible for the architecture, development of internal tools and infrastructure.
     highlights:
-      - IT Specialist focusing in promoting top IT Infrastructure, IT Security and Data Analysis/Engineering.
+      - Management focusing in promoting top IT Infrastructure, IT Security and Data Analysis/Engineering.
       - Startup environment with 100+ employees and 4 teams under my management.
       - Hands-on role with a lot of technical involvement in the projects and processes of the teams.
       - Heavy FOSS usage in the stack for budget optimization.
@@ -42,11 +42,11 @@ work:
       - Architected and implemented data pipeline using Airflow, dbt and ClickHouse, etc which is responsible for the processing of all the company's data and is used by multiple teams for analytics and reporting.
       - Refactoring core things from Manual to IaC
   - company: Procter & Gamble (P&G)
-    position: Technician Intern
+    position: Technician - Trainee
     website: https://pg.com
     startDate: 2016-08
     endDate: 2018-08
-    summary: Responsible for the development of internal tools and automation of processes using Python and PowerBI.
+    summary: Responsible for the development of internal tools and automation of processes using Python, C++ and PowerBI.
     highlights:
       - Sole author/developer of an automated Zebra Printer GHS solution which was implemented in multiple plants.
       - Automation/spreadsheet geek/go-to.
@@ -59,18 +59,19 @@ volunteer:
     website: https://redash.io
     startDate: 2022-00
     endDate: present
-    summary: Project with 28k+ stars on GitHub, a web based data visualization and dashboarding tool.
+    summary: 28k+ stars on GitHub, a web based data visualization and dashboarding tool with many popular database connectors.
     highlights: []
 education:
   - institution: Universidade Federal do Rio de Janeiro (POLI-UFRJ)
     area: Electronics and Computer Engineering
-    studyType: BA
+    studyType: Bachelor
     startDate: 2017-01
     endDate: 2021-01 (never finished)
-    courses: []
+    courses:
+      []
       # - All calculus and physics (theoretical and experimental) courses
-    summary:
-  - institution: Centro Federal de Educação Tecnológica (CEFET-RJ)
+    summary: ~3 years of the course, but never finished due to financial and personal reasons. I have a good background in the theoretical and practical aspects of engineering, but I decided to focus on my career instead of finishing the degree.
+  - institution: Centro Federal de Educação Tecnológica (CEFET/RJ)
     area: Electronics
     studyType: Technician
     startDate: 2013-01
@@ -80,7 +81,7 @@ education:
       - Assembly language
       - Digital electronics
       - much more...
-    summary:
+    summary: Technical course in electronics, gaining practical and theoretical knowledge in various areas of electronics and programming.
 skills:
   - name: IT Infrastructure
     level: Proficient
@@ -91,38 +92,37 @@ skills:
       - Kubernetes/Docker
       - Linux
       - GCP/Azure
-      - VMs (including Proxmox, Windows and MacOS)
-      - DNS/Networking
-      - Grafana/Prometheus/OTel
-      - OpenSearch/ES
-      - Cilium/Hubble/Tetragon/eBPF
-      - GitHub Actions
-      - Zero Trust
-      - Nix (recently)
+      # - VMs (including Proxmox, Windows and MacOS)
+      # - DNS/Networking
+      # - Grafana/Prometheus/OTel
+      # - OpenSearch/ES
+      # - Cilium/Hubble/Tetragon/eBPF
+      # - GitHub Actions
+      # - Zero Trust
+      # - Nix (recently)
   - name: IT Security
     level: Proficient
     keywords:
+      - SOC2/ISO27001
       - Incident response/Vulnerability management
-      - Security monitoring
-      - OWASP
-      - SAST/DAST
+      - Security monitoring/architecture
       - Threat modeling
       - Risk assessment
-      - Penetration testing
-      - Security architecture
-      - SOC2/ISO27001
-      - Onboarding/Offboarding
+      # - Onboarding/Offboarding
+      # - Penetration testing
+      # - OWASP
+      # - SAST/DAST
   - name: Data Engineering
     level: Proficient
     keywords:
       - Airflow/Google Composer
       - MySQL/PostgreSQL/ClickHouse/Mongo
-      - dbt
+      - DB Tuning/Optimization/Restoration
       - Data modeling
       - Data pipelines
-      - Spark
-      - DataHub
-      - DB Tuning/Optimization/Restoration
+      # - dbt
+      # - Spark
+      # - DataHub
   - name: BI
     level: Proficient
     keywords:
@@ -159,16 +159,16 @@ interests:
       - Technology
       - Engineering
       - Mathematics
-  - name: Giving "TED Talks" on
-    keywords:
-      - Nix/NixOS
-      - Kubernetes
-      - Tailscale/Headscale
-      - Isovalent/Cilium
-      - Lean 4
-      - Pony
-      - FOSS in general
-      - Quantum computing
+  # - name: Giving "TED Talks" on
+  #   keywords:
+  #     - Nix/NixOS
+  #     - Kubernetes
+  #     - Tailscale/Headscale
+  #     - Isovalent/Cilium
+  #     - Lean 4
+  #     - Pony
+  #     - FOSS in general
+  #     - Quantum computing
   - name: Hiking (just a noob - for now)
     keywords:
       - Nature
