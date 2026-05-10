@@ -30,13 +30,6 @@ basics:
     # - network: x
     #   username: lucasfcnunes
 work:
-  - company: LUCASFCNUNES
-    position: Owner
-    website: https://lucasfcnunes.com
-    startDate: 2020-06
-    endDate: present
-    summary: Consulting, B2B contracting, freelancing and open source contributions.
-    highlights: []
   - company: Incentive.me
     position: IT Supervisor
     website: https://incentive.me
@@ -51,13 +44,20 @@ work:
       - Leadership, communication, problem solving, project management (with 4 teams with at least 2 members each simultaneously).
       - Architected and implemented data pipeline using Airflow, dbt and ClickHouse, etc which is responsible for the processing of all the company's data and is used by multiple teams for analytics and reporting.
       - Refactoring core things from Manual to IaC
+  - company: LUCASFCNUNES
+    position: Owner
+    website: https://lucasfcnunes.com
+    startDate: 2020-06
+    endDate: present
+    summary: Consulting, B2B contracting, freelancing and open source contributions.
+    highlights: []
   - company: Procter & Gamble (P&G)
     # position: Electronics Technician - Trainee
     position: Technician - Trainee
     website: https://pg.com
     startDate: 2016-10
     endDate: 2018-10
-    summary: Responsible for the development of internal tools and automation of processes using Python, C++ and PowerBI.
+    summary: Responsible for the development of internal tools and automation of processes using Python, C++ and Power BI.
     highlights:
       - Sole author/developer of an automated Zebra Printer GHS solution which was implemented in multiple plants.
       - Automation/spreadsheet geek/go-to.
@@ -66,11 +66,11 @@ work:
       - In touch with SAP, HMI and production Ladder code.
 volunteer:
   - organization: redash
-    position: Member and contributor
+    position: Org. Member
     website: https://redash.io
-    startDate: 2022-00
+    startDate: 2023-03
     endDate: present
-    summary: 28k+ stars on GitHub, a web based data visualization and dashboarding tool with many popular database connectors.
+    summary: A popular (28k+ stars on GitHub) FOSS web based data visualization and dashboarding tool with many popular database connectors.
     highlights: []
 education:
   - institution: Universidade Federal do Rio de Janeiro (UFRJ, Escola Politécnica, DEL)
@@ -83,7 +83,7 @@ education:
     website: https://ufrj.br/en/
     courses: []
       # - All calculus and physics (theoretical and experimental) courses
-    summary: Coursed ~3.5 years of engineering, but never finished. I have a good background in the theoretical and practical aspects of engineering and scientific research.
+    summary: I completed about three and a half years of engineering studies, though I didn't finish the degree. During that time, I built a strong foundation in both the theoretical and practical sides of engineering and scientific research.
   - institution: Centro Federal de Educação Tecnológica (CEFET/RJ)
     area: Electronics
     studyType: Technician
@@ -105,7 +105,7 @@ skills:
       # - Corporate architectures with heavy FOSS usage
       - FOSS based arch
       - FinOps
-      - IT Budget Management
+      - IT budget management
       - Kubernetes
       # - Docker
       # - Linux
@@ -141,7 +141,7 @@ skills:
       - PostgreSQL
       - ClickHouse
       # - Mongo
-      - DB Tuning/Optimization/Recovery
+      - DB tuning/optimization/recovery
       - Data modeling
       - Data pipelines
       # - dbt
@@ -166,10 +166,10 @@ skills:
   #     - Go
   #     - JS/TS
 languages:
-  - language: Portuguese (BR)
-    fluency: Native
-  # - language: Portuguese
+  # - language: Portuguese (BR)
   #   fluency: Native
+  - language: Portuguese
+    fluency: Native
   - language: English
     fluency: Fluent
   # - language: Japanese
@@ -179,7 +179,7 @@ languages:
 interests:
   - name: FOSS
     keywords:
-      - Open source software
+      # - Open source software
       - Community
       - Giving back
   - name: STEM
