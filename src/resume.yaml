@@ -1,8 +1,12 @@
+# INFO: resumes don't have much space (trimmed lots of things out)
 basics:
-  name: Lucas Fernando C. Nunes
-  label: IT Specialist
+  # name: Lucas Fernando C. Nunes
+  name: Lucas F. C. Nunes
+  label: IT Generalist
   picture: ""
-  email: contact@lucasfcnunes.com
+  email: |-
+    lucasfc.nunes@gmail.com
+    contact@lucasfcnunes.com
   phone: "+55 21 97431-1445"
   website: https://lucasfcnunes.com
   summary: ""
@@ -42,6 +46,7 @@ work:
       - Architected and implemented data pipeline using Airflow, dbt and ClickHouse, etc which is responsible for the processing of all the company's data and is used by multiple teams for analytics and reporting.
       - Refactoring core things from Manual to IaC
   - company: Procter & Gamble (P&G)
+    # position: Electronics Technician - Trainee
     position: Technician - Trainee
     website: https://pg.com
     startDate: 2016-08
@@ -66,11 +71,11 @@ education:
     area: Electronics and Computer Engineering
     studyType: Bachelor
     startDate: 2017-01
-    endDate: 2021-01 (never finished)
+    endDate: ~2021 (never finished)
     courses:
       []
       # - All calculus and physics (theoretical and experimental) courses
-    summary: ~3 years of the course, but never finished due to financial and personal reasons. I have a good background in the theoretical and practical aspects of engineering, but I decided to focus on my career instead of finishing the degree.
+    summary: Coursed ~3.5 years of engineering, but never finished. I have a good background in the theoretical and practical aspects of engineering and scientific research.
   - institution: Centro Federal de Educação Tecnológica (CEFET/RJ)
     area: Electronics
     studyType: Technician
@@ -86,12 +91,17 @@ skills:
   - name: IT Infrastructure
     level: Proficient
     keywords:
-      - Infrastructure as Code (Crossplane/Terraform/Ansible)
-      - Corporate architectures with heavy FOSS usage
-      - IT Budget Management/FinOps
-      - Kubernetes/Docker
-      - Linux
-      - GCP/Azure
+      # - Infrastructure as Code (Crossplane/Terraform/Ansible)
+      - IaC
+      # - Corporate architectures with heavy FOSS usage
+      - FOSS based arch
+      - FinOps
+      - IT Budget Management
+      - Kubernetes
+      # - Docker
+      # - Linux
+      # - GCP/Azure
+      - Cloud
       # - VMs (including Proxmox, Windows and MacOS)
       # - DNS/Networking
       # - Grafana/Prometheus/OTel
@@ -103,21 +113,26 @@ skills:
   - name: IT Security
     level: Proficient
     keywords:
-      - SOC2/ISO27001
-      - Incident response/Vulnerability management
-      - Security monitoring/architecture
-      - Threat modeling
+      - SOC2
+      - ISO27001
+      - OWASP
+      - Incident response
+      # - Vulnerability management
+      # - Security monitoring/architecture
+      # - Threat modeling
       - Risk assessment
       # - Onboarding/Offboarding
       # - Penetration testing
-      # - OWASP
       # - SAST/DAST
   - name: Data Engineering
     level: Proficient
     keywords:
-      - Airflow/Google Composer
-      - MySQL/PostgreSQL/ClickHouse/Mongo
-      - DB Tuning/Optimization/Restoration
+      - Airflow/Composer
+      - MySQL
+      - PostgreSQL
+      - ClickHouse
+      # - Mongo
+      - DB Tuning/Optimization/Recovery
       - Data modeling
       - Data pipelines
       # - dbt
@@ -126,27 +141,30 @@ skills:
   - name: BI
     level: Proficient
     keywords:
-      - PowerBI (PowerQuery, DAX, etc)
-      - Python/R
-      - Redash/Metabase
-      - SQL/Excel
-      - Shareholder reporting
-  - name: Backend Development
-    level: Advanced reviewing
-    keywords:
-      - Designing and reviewing backend systems and APIs
+      - Power BI (PQ, DAX, Formula, VBA)
+      - Reporting
       - Python
-      - Go
-      - JS/TS
+      - R
+      - SQL
+      - Redash
+      - Metabase
+      - Excel
+  # - name: Backend Development
+  #   level: Advanced reviewing
+  #   keywords:
+  #     - Designing and reviewing backend systems and APIs
+  #     - Python
+  #     - Go
+  #     - JS/TS
 languages:
   - language: Portuguese (BR)
     fluency: Native
   - language: English
     fluency: Fluent
-  - language: Japanese
-    fluency: Intermediate
-  - language: Latin
-    fluency: Basic
+  # - language: Japanese
+  #   fluency: Intermediate
+  # - language: Latin
+  #   fluency: Basic
 interests:
   - name: FOSS contributing
     keywords:

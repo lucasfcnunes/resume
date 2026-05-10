@@ -83,7 +83,8 @@ mbItem =
 
 mbElement : Style
 mbElement =
-    marginBottom (mm 7)
+    -- marginBottom (mm 7)
+    marginBottom (mm 2)
 
 
 spacing : Style

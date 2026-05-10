@@ -76,7 +76,7 @@ viewLeft resume =
             , backgroundColor theme.primary
             , height (mm h)
             , width (mm leftWidth)
-            , padding (mm 10)
+            , padding (mm 5)
             ]
         ]
         [ viewMaybe viewBasics resume.basics
@@ -95,7 +95,7 @@ viewRight resume =
             , backgroundColor theme.secondary
             , height (mm h)
             , width (mm rightWidth)
-            , padding (mm 10)
+            , padding (mm 5)
             , float right
             ]
         ]
