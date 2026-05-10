@@ -68,10 +68,14 @@ volunteer:
     highlights: []
 education:
   - institution: Universidade Federal do Rio de Janeiro (POLI-UFRJ)
+  - institution: Universidade Federal do Rio de Janeiro (UFRJ, Escola Politécnica, DEL)
     area: Electronics and Computer Engineering
     studyType: Bachelor
     startDate: 2017-01
     endDate: ~2021 (never finished)
+    # website: https://www.del.ufrj.br/
+    # website: https://poli.ufrj.br/
+    website: https://ufrj.br/en/
     courses:
       []
       # - All calculus and physics (theoretical and experimental) courses
@@ -81,6 +85,7 @@ education:
     studyType: Technician
     startDate: 2013-01
     endDate: 2016-12
+    website: https://www.cefet-rj.br/index.php/maracana-campus-headquarter-presentation
     courses:
       - PLC/PIC/Arduino (C/Assembly/Ladder) programming
       - Assembly language

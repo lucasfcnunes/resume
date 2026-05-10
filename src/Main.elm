@@ -164,9 +164,12 @@ viewEducation education =
 
         summary =
             Maybe.withDefault "" education.summary
+
+        website =
+            Maybe.withDefault "" education.website
     in
     -- edu institution studyType area startDate endDate
-    entry (area ++ " - " ++ studyType) summary "" institution startDate endDate
+    entry (area ++ " - " ++ studyType) summary website institution startDate endDate
 
 
 
