@@ -49,8 +49,8 @@ work:
     # position: Electronics Technician - Trainee
     position: Technician - Trainee
     website: https://pg.com
-    startDate: 2016-08
-    endDate: 2018-08
+    startDate: 2016-10
+    endDate: 2018-10
     summary: Responsible for the development of internal tools and automation of processes using Python, C++ and PowerBI.
     highlights:
       - Sole author/developer of an automated Zebra Printer GHS solution which was implemented in multiple plants.
@@ -67,7 +67,6 @@ volunteer:
     summary: 28k+ stars on GitHub, a web based data visualization and dashboarding tool with many popular database connectors.
     highlights: []
 education:
-  - institution: Universidade Federal do Rio de Janeiro (POLI-UFRJ)
   - institution: Universidade Federal do Rio de Janeiro (UFRJ, Escola Politécnica, DEL)
     area: Electronics and Computer Engineering
     studyType: Bachelor
