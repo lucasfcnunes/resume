@@ -2,6 +2,7 @@ module Resume exposing (Award, Awards, Basics, Courses, Education, Educations, H
 
 --
 
+import Css exposing (url)
 import Json.Decode as Decode
     exposing
         ( Decoder
@@ -176,7 +177,7 @@ type alias Profiles =
 
 type alias Profile =
     { network : Maybe String
-    , url : Maybe String
+    , url : Maybe Url
     , username : Maybe String
     }
 

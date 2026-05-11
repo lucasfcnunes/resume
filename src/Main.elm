@@ -6,7 +6,7 @@ import Html.Styled exposing (Html, div, span, text, toUnstyled)
 import Html.Styled.Attributes exposing (class, css)
 import Json.Decode as Decode
 import Resume
-import Theme exposing (bBoxBlock, email, entry, github, globe, h, h1l, h2l, h2r, h3l, leftWidth, linkedin, mbElement, phone, rightWidth, theme)
+import Theme exposing (bBoxBlock, email, entry, github, globe, h, h1l, h2l, h2r, h3l, leftWidth, linkedin, mbElement, phone, rightWidth, telegram, theme, twitter, whatsapp, xTwitter)
 
 
 
@@ -411,9 +411,9 @@ viewContact basics =
     div [ css [ mbElement ] ]
         [ h2l "Contact"
         , viewMaybe viewLocation basics.location
-        , viewMaybe email basics.email
-        , viewMaybe phone basics.phone
 
+        -- , viewMaybe email basics.email
+        -- , viewMaybe phone basics.phone
         -- , viewMaybe telegram basics.phone
         , viewMaybe viewProfiles basics.profiles
         ]
@@ -437,8 +437,11 @@ viewLocation location =
                     city
                         ++ ", "
                         ++ countryCodeToCountry countryCode
+
+        url =
+            "https://www.google.com/maps/search/?api=1&query=" ++ place
     in
-    globe place
+    globe url place
 
 
 countryCodeToCountry : String -> String
@@ -475,12 +478,35 @@ viewProfile profile =
             Maybe.withDefault "" profile.network
                 |> String.toLower
     in
-    case network of
-        "github" ->
-            viewMaybe github profile.url
+    case profile.username of
+        Just username ->
+            case network of
+                "email" ->
+                    email username
 
-        "linkedin" ->
-            viewMaybe linkedin profile.url
+                "phone" ->
+                    phone username
+
+                "github" ->
+                    github username
+
+                "linkedin" ->
+                    linkedin username
+
+                "x" ->
+                    xTwitter username
+
+                "twitter" ->
+                    twitter username
+
+                "whatsapp" ->
+                    whatsapp username
+
+                "telegram" ->
+                    telegram username
+
+                _ ->
+                    text ""
 
         _ ->
             text ""

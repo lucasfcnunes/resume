@@ -4,10 +4,6 @@ basics:
   name: Lucas F. C. Nunes
   label: IT Generalist
   picture: ""
-  email: |-
-    lucasfc.nunes@gmail.com
-    contact@lucasfcnunes.com
-  phone: "+55 21 97431-1445"
   website: https://lucasfcnunes.com
   summary: ""
   location:
@@ -17,12 +13,22 @@ basics:
     countryCode: BR
     region: ""
   profiles:
-    - network: GitHub
-      username: lucasfcnunes
-      url: github.com/lucasfcnunes
+    - network: email
+      username: contact@lucasfcnunes.com
+    # - network: email
+    #   username: lucasfc.nunes@gmail.com
+    # - network: phone
+    #   username: +55 21 97431-1445
+    - network: whatsapp
+      username: +55 21 97431-1445
     - network: linkedin
       username: lucasfcnunes
-      url: linkedin.com/in/lucasfcnunes
+    - network: github
+      username: lucasfcnunes
+    # - network: telegram
+    #   username: lucasfcnunes
+    # - network: x
+    #   username: lucasfcnunes
 work:
   - company: LUCASFCNUNES
     position: Owner
@@ -75,8 +81,7 @@ education:
     # website: https://www.del.ufrj.br/
     # website: https://poli.ufrj.br/
     website: https://ufrj.br/en/
-    courses:
-      []
+    courses: []
       # - All calculus and physics (theoretical and experimental) courses
     summary: Coursed ~3.5 years of engineering, but never finished. I have a good background in the theoretical and practical aspects of engineering and scientific research.
   - institution: Centro Federal de Educação Tecnológica (CEFET/RJ)
@@ -163,6 +168,8 @@ skills:
 languages:
   - language: Portuguese (BR)
     fluency: Native
+  # - language: Portuguese
+  #   fluency: Native
   - language: English
     fluency: Fluent
   # - language: Japanese
@@ -170,7 +177,7 @@ languages:
   # - language: Latin
   #   fluency: Basic
 interests:
-  - name: FOSS contributing
+  - name: FOSS
     keywords:
       - Open source software
       - Community
@@ -191,8 +198,10 @@ interests:
   #     - Pony
   #     - FOSS in general
   #     - Quantum computing
-  - name: Hiking (just a noob - for now)
+  - name: Hiking
     keywords:
       - Nature
       - Outdoors
+      - Mountain
+      - Novice
 references: []

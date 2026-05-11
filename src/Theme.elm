@@ -1,4 +1,4 @@
-module Theme exposing (bBoxBlock, bBoxInline, date, edu, email, entry, faBrand, faSolid, font, fontAwesomeIcon, github, globe, h, h1l, h1r, h1s, h2l, h2r, h2s, h3l, h3r, h3s, h5s, h5sWithFontAwesome, header, hs, interest, keywords, language, leftWidth, linkedin, mbElement, mbItem, phone, rightWidth, skill, spacing, telegram, theme, twitter, w, whatsapp)
+module Theme exposing (bBoxBlock, bBoxInline, date, edu, email, entry, faBrand, faSolid, font, fontAwesomeIcon, github, globe, h, h1l, h1r, h1s, h2l, h2r, h2s, h3l, h3r, h3s, h5s, h5sWithFontAwesome, header, hs, interest, keywords, language, leftWidth, linkedin, mbElement, mbItem, phone, rightWidth, skill, spacing, telegram, theme, twitter, w, whatsapp, xTwitter)
 
 import Css
     exposing
@@ -44,8 +44,9 @@ import Css
         , width
         )
 import Html.Styled exposing (Attribute, Html, a, div, h1, h2, h3, h5, i, p, span, text)
-import Html.Styled.Attributes exposing (class, css, href)
+import Html.Styled.Attributes exposing (class, css, href, rel, target)
 import List.Extra exposing (splitAt)
+import Regex
 
 
 
@@ -289,6 +290,10 @@ entry title desc url company from to =
         , h5 [ css [ companyStyle ] ]
             [ a
                 [ href url
+                , target "_blank"
+
+                -- , rel "noopener noreferrer"
+                , rel "noopener"
                 , css
                     [ textDecoration none
                     , color theme.text
@@ -332,6 +337,35 @@ h5s title =
         ]
 
 
+h5s2 : String -> String -> Html msg
+h5s2 url username =
+    h5
+        [ css
+            [ font 11 (int 400)
+            , bBoxInline
+            , marginBottom (mm 3)
+            ]
+        ]
+        [ a
+            [ href url
+            , target "_blank"
+
+            -- , rel "noopener noreferrer"
+            , rel "noopener"
+            , css
+                [ textDecoration none
+                , color theme.text
+                , bBoxBlock
+
+                -- , marginBottom (mm 1.5)
+                ]
+            ]
+            [ text
+                username
+            ]
+        ]
+
+
 fontAwesomeIcon : String -> Html msg
 fontAwesomeIcon faIcon =
     span [ css [ width (mm 6.5), bBoxInline ] ]
@@ -341,9 +375,17 @@ fontAwesomeIcon faIcon =
 
 h5sWithFontAwesome : String -> String -> Html msg
 h5sWithFontAwesome title faIcon =
-    span [ css [ bBoxInline ] ]
+    span [ css [ bBoxInline, spacing ] ]
         [ fontAwesomeIcon faIcon
         , h5s title
+        ]
+
+
+h5sWithFontAwesome2 : String -> String -> String -> Html msg
+h5sWithFontAwesome2 url username faIcon =
+    span [ css [ bBoxInline, spacing ] ]
+        [ fontAwesomeIcon faIcon
+        , h5s2 url username
         ]
 
 
@@ -357,49 +399,96 @@ faBrand icon =
     "fab fa-" ++ icon
 
 
+cleanPhone : String -> String
+cleanPhone num =
+    Regex.replace (Maybe.withDefault Regex.never (Regex.fromString "\\D+")) (\_ -> "") num
+
+
+safeEmail : String -> String
+safeEmail address =
+    String.replace "@" " at " address
+        |> String.replace "." " dot "
+
+
 email : String -> Html msg
 email address =
     let
-        safe =
-            String.replace "@" " at " address
-                |> String.replace "." " dot "
+        url =
+            "mailto:" ++ address
+
+        -- safe_address =
+        --     safeEmail address
     in
-    h5sWithFontAwesome safe (faSolid "envelope")
+    -- h5sWithFontAwesome safe_address (faSolid "envelope")
+    h5sWithFontAwesome2 url address (faSolid "envelope")
 
 
-globe : String -> Html msg
-globe num =
-    h5sWithFontAwesome num (faSolid "globe")
+globe : String -> String -> Html msg
+globe url place =
+    h5sWithFontAwesome2 url place (faSolid "globe")
 
 
 phone : String -> Html msg
 phone num =
-    h5sWithFontAwesome num (faSolid "phone")
+    let
+        url =
+            "tel:+" ++ cleanPhone num
+    in
+    h5sWithFontAwesome2 url num (faSolid "phone")
 
 
 github : String -> Html msg
-github url =
-    h5sWithFontAwesome url (faBrand "github")
+github username =
+    let
+        url =
+            "https://github.com/" ++ username
+    in
+    h5sWithFontAwesome2 url username (faBrand "github")
 
 
 linkedin : String -> Html msg
-linkedin url =
-    h5sWithFontAwesome url (faBrand "linkedin")
+linkedin username =
+    let
+        url =
+            "https://linkedin.com/in/" ++ username
+    in
+    h5sWithFontAwesome2 url username (faBrand "linkedin")
+
+
+xTwitter : String -> Html msg
+xTwitter username =
+    let
+        url =
+            "https://x.com/" ++ username
+    in
+    h5sWithFontAwesome2 url username (faBrand "x-twitter")
 
 
 twitter : String -> Html msg
-twitter url =
-    h5sWithFontAwesome url (faBrand "twitter")
+twitter username =
+    let
+        url =
+            "https://twitter.com/" ++ username
+    in
+    h5sWithFontAwesome2 url username (faBrand "twitter")
 
 
 whatsapp : String -> Html msg
 whatsapp num =
-    h5sWithFontAwesome num (faBrand "whatsapp")
+    let
+        url =
+            "https://wa.me/" ++ cleanPhone num
+    in
+    h5sWithFontAwesome2 url num (faBrand "whatsapp")
 
 
 telegram : String -> Html msg
-telegram num =
-    h5sWithFontAwesome num (faBrand "telegram")
+telegram username =
+    let
+        url =
+            "https://t.me/" ++ username
+    in
+    h5sWithFontAwesome2 url username (faBrand "telegram")
 
 
 language : String -> String -> Html msg
@@ -407,6 +496,12 @@ language lang fluency =
     let
         iconName =
             case String.toLower lang of
+                "portuguese (br)" ->
+                    "brazilian-real-sign"
+
+                "portuguese" ->
+                    "archway"
+
                 "english" ->
                     "flag-usa"
 
@@ -445,6 +540,15 @@ interest lang =
 
                 "photography" ->
                     "camera"
+
+                "hiking" ->
+                    "person-hiking"
+
+                "stem" ->
+                    "rocket"
+
+                "foss" ->
+                    "code-branch"
 
                 _ ->
                     ""
