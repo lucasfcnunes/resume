@@ -45,7 +45,7 @@ tasks:
     deps:
       - clean
     cmds:
-      - rm -rf node_modules .cache .parcel-cache
+      - rm -rf node_modules .cache .parcel-cache elm-stuff
   reinstall:
     cmds:
       - rm -rf node_modules
