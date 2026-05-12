@@ -5,10 +5,10 @@ channels:
 dependencies:
   - go-task
   - pre-commit
-  - nodejs
+  - nodejs=24
   - elm
   # INFO: nodejs package build
-  - python
+  - python=3.14
   - make
   - setuptools
   - cxx-compiler
