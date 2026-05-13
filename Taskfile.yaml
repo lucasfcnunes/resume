@@ -22,10 +22,10 @@ tasks:
     vars:
       RENDER_PDF_CMD_PREFIX:
         sh: |
-          if command -v xvfb-run >/dev/null 2>&1; then
-            echo 'xvfb-run -a'
-          elif command -v nix >/dev/null 2>&1; then
+          if command -v nix >/dev/null 2>&1; then
             echo 'nix develop --command -- steam-run env TMPDIR=/tmp xvfb-run -a'
+          elif command -v xvfb-run >/dev/null 2>&1; then
+            echo 'xvfb-run -a'
           else
             echo ''
           fi
@@ -34,6 +34,7 @@ tasks:
       - ls -la
       - >-
         {{.RENDER_PDF_CMD_PREFIX}} npx electron-pdf "$(pwd)/index.html" "$(pwd)/resume.pdf"
+      - ls -la resume.pdf
   build:
     sources:
       - ./src/**
