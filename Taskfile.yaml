@@ -22,7 +22,9 @@ tasks:
     vars:
       RENDER_PDF_CMD_PREFIX:
         sh: |
-          if command -v nix >/dev/null 2>&1; then
+          if [ -n "${GITHUB_ACTIONS:-}" ] || [ "${CI:-}" = "true" ]; then
+            echo 'xvfb-run -a'
+          elif command -v nix >/dev/null 2>&1; then
             echo 'nix develop --command -- steam-run env TMPDIR=/tmp xvfb-run -a'
           elif command -v xvfb-run >/dev/null 2>&1; then
             echo 'xvfb-run -a'
