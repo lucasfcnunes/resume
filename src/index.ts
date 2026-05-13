@@ -1,7 +1,12 @@
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import {
+  faArchway,
+  faBrazilianRealSign,
+  faCodeBranch,
   faEnvelope,
   faPhone,
+  faPersonHiking,
+  faRocket,
   faGlobe,
   faSkiingNordic,
   faCamera,
@@ -16,10 +21,16 @@ import {
   faWhatsapp,
   faTelegram,
   faLinkedin,
+  faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
+  faArchway,
+  faBrazilianRealSign,
+  faCodeBranch,
   faEnvelope,
+  faPersonHiking,
+  faRocket,
   faPhone,
   faGlobe,
   faSkiingNordic,
@@ -33,6 +44,7 @@ library.add(
   faWhatsapp,
   faTelegram,
   faLinkedin,
+  faXTwitter,
 );
 // This will look continously to convert i-fa to svg
 dom.watch();
