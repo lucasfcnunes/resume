@@ -404,10 +404,11 @@ cleanPhone num =
     Regex.replace (Maybe.withDefault Regex.never (Regex.fromString "\\D+")) (\_ -> "") num
 
 
-safeEmail : String -> String
-safeEmail address =
-    String.replace "@" " at " address
-        |> String.replace "." " dot "
+
+-- safeEmail : String -> String
+-- safeEmail address =
+--     String.replace "@" " at " address
+--         |> String.replace "." " dot "
 
 
 email : String -> Html msg

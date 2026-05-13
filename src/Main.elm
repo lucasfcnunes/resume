@@ -139,9 +139,8 @@ viewEducations educations =
         [ css [ mbElement ]
         ]
     <|
-        [ h2r "Education"
-        ]
-            ++ entries
+        h2r "Education"
+            :: entries
 
 
 viewEducation : Resume.Education -> Html Msg
@@ -191,9 +190,8 @@ viewInterests interests =
             List.map viewInterest interests
     in
     div [ css [ mbElement ] ] <|
-        [ h2l "Interests"
-        ]
-            ++ entries
+        h2l "Interests"
+            :: entries
 
 
 viewInterest : Resume.Interest -> Html Msg
@@ -221,9 +219,8 @@ viewLanguages languages =
             List.map viewLanguage languages
     in
     div [ css [ mbElement ] ] <|
-        [ h2l "Languages"
-        ]
-            ++ entries
+        h2l "Languages"
+            :: entries
 
 
 viewLanguage : Resume.Language -> Html Msg
@@ -256,9 +253,8 @@ viewSkills skills =
                 skills
     in
     div [ css [ mbElement ] ] <|
-        [ h2l "Skills"
-        ]
-            ++ entries
+        h2l "Skills"
+            :: entries
 
 
 viewSkill : Resume.Skill -> Html Msg
@@ -295,9 +291,8 @@ viewVolunteer volunteer =
         [ css [ mbElement ]
         ]
     <|
-        [ h2r "Volunteering"
-        ]
-            ++ entries
+        h2r "Volunteering"
+            :: entries
 
 
 viewVolunteering : Resume.Volunteering -> Html Msg
@@ -343,9 +338,8 @@ viewWork jobs =
         [ css [ mbElement ]
         ]
     <|
-        [ h2r "Experience"
-        ]
-            ++ entries
+        h2r "Experience"
+            :: entries
 
 
 viewJob : Resume.Job -> Html Msg
