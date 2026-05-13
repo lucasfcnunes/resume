@@ -1,4 +1,4 @@
-module Theme exposing (bBoxBlock, bBoxInline, date, edu, email, entry, faBrand, faSolid, font, fontAwesomeIcon, github, globe, h, h1l, h1r, h1s, h2l, h2r, h2s, h3l, h3r, h3s, h5s, h5sWithFontAwesome, header, hs, interest, keywords, language, leftWidth, linkedin, mbElement, mbItem, phone, rightWidth, skill, spacing, telegram, theme, twitter, w, whatsapp, xTwitter)
+module Theme exposing (bBoxBlock, bBoxInline, date, edu, email, entry, faBrand, faSolid, font, fontAwesomeIcon, github, globe, h, h1l, h1r, h1s, h2l, h2r, h2s, h3l, h3l2, h3r, h3s, h3s2, h5s, h5sWithFontAwesome, header, hs, interest, keywords, language, leftWidth, linkedin, mbElement, mbItem, phone, rightWidth, skill, spacing, telegram, theme, twitter, w, whatsapp, xTwitter)
 
 import Css
     exposing
@@ -147,6 +147,57 @@ bBoxBlock =
         ]
 
 
+hs2 :
+    (List (Attribute msg) -> List (Html msg) -> Html msg)
+    -> String
+    -> String
+    -> Style
+    -> Color
+    -> Float
+    -> FontWeight a
+    -> Int
+    -> Html msg
+hs2 hNode url title style borderCol size weight underlineCount =
+    let
+        -- underlineCount =
+        --     -- try full line instead of just a few
+        --     -- 4
+        --     10000
+        ( s, e ) =
+            splitAt underlineCount (String.split "" title)
+
+        start =
+            String.concat s
+
+        end =
+            String.concat e
+    in
+    hNode
+        [ css
+            [ font size weight
+            , style
+            ]
+        ]
+        [ a
+            [ href url
+            , target "_blank"
+
+            -- , rel "noopener noreferrer"
+            , rel "noopener"
+            , css
+                [ borderColor borderCol
+
+                -- , borderBottomStyle solid
+                , borderBottomWidth (pt 2)
+                , textDecoration none
+                , color theme.text
+                , bBoxBlock
+                ]
+            ]
+            [ text title ]
+        ]
+
+
 hs :
     (List (Attribute msg) -> List (Html msg) -> Html msg)
     -> String
@@ -213,6 +264,18 @@ h2s title borderColor =
     hs h2 title style borderColor 16 (int 600) 100
 
 
+h3s2 : String -> String -> Color -> Html msg
+h3s2 url title borderColor =
+    let
+        style =
+            Css.batch
+                [ marginBottom (mm 3)
+                , bBoxInline
+                ]
+    in
+    hs2 h3 url title style borderColor 12 (int 500) 0
+
+
 h3s : String -> Color -> Html msg
 h3s title borderColor =
     let
@@ -248,6 +311,11 @@ h1l title =
 h2l : String -> Html msg
 h2l title =
     h2s title theme.text
+
+
+h3l2 : String -> String -> Html msg
+h3l2 url title =
+    h3s2 url title theme.text
 
 
 h3l : String -> Html msg

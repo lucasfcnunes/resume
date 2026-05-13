@@ -1,4 +1,4 @@
-module Resume exposing (Award, Awards, Basics, Courses, Education, Educations, Highlights, Interest, Interests, Job, Keywords, Language, Languages, Location, Profile, Profiles, Publication, Publications, Reference, References, Resume, Skill, Skills, Url, Volunteer, Volunteering, Work, awardDecoder, awardsDecoder, basicsDecoder, coursesDecoder, decoder, educationDecoder, educationsDecoder, highlightsDecoder, interestDecoder, interestsDecoder, jobDecoder, keywordsDecoder, languageDecoder, languagesDecoder, locationDecoder, profileDecoder, profilesDecoder, publicationDecoder, publicationsDecoder, referenceDecoder, referencesDecoder, skillDecoder, skillsDecoder, volunteerDecoder, volunteeringDecoder, workDecoder)
+module Resume exposing (Award, Awards, Basics, Courses, Education, Educations, Highlights, Interest, Interests, Job, Keywords, Label, Labels, Language, Languages, Location, Profile, Profiles, Publication, Publications, Reference, References, Resume, Skill, Skills, Url, Volunteer, Volunteering, Work, awardDecoder, awardsDecoder, basicsDecoder, coursesDecoder, decoder, educationDecoder, educationsDecoder, highlightsDecoder, interestDecoder, interestsDecoder, jobDecoder, keywordsDecoder, languageDecoder, languagesDecoder, locationDecoder, profileDecoder, profilesDecoder, publicationDecoder, publicationsDecoder, referenceDecoder, referencesDecoder, skillDecoder, skillsDecoder, volunteerDecoder, volunteeringDecoder, workDecoder)
 
 --
 
@@ -31,7 +31,7 @@ type alias Resume =
 
 type alias Basics =
     { email : Maybe String
-    , label : Maybe String
+    , labels : Maybe Labels
     , location : Maybe Location
     , name : Maybe String
     , phone : Maybe String
@@ -191,6 +191,16 @@ type alias Location =
     }
 
 
+type alias Labels =
+    List Label
+
+
+type alias Label =
+    { name : Maybe String
+    , url : Maybe String
+    }
+
+
 decoder : Decoder Resume
 decoder =
     succeed Resume
@@ -211,11 +221,23 @@ awardsDecoder =
     Decode.list awardDecoder
 
 
+labelsDecoder : Decoder Labels
+labelsDecoder =
+    Decode.list labelDecoder
+
+
+labelDecoder : Decoder Label
+labelDecoder =
+    succeed Label
+        |> optional "name" (nullable Decode.string) Nothing
+        |> optional "url" (nullable Decode.string) Nothing
+
+
 basicsDecoder : Decoder Basics
 basicsDecoder =
     succeed Basics
         |> optional "email" (nullable Decode.string) Nothing
-        |> optional "label" (nullable Decode.string) Nothing
+        |> optional "labels" (nullable labelsDecoder) Nothing
         |> optional "location" (nullable locationDecoder) Nothing
         |> optional "name" (nullable Decode.string) Nothing
         |> optional "phone" (nullable Decode.string) Nothing

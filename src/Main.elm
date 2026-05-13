@@ -6,7 +6,7 @@ import Html.Styled exposing (Html, div, span, text, toUnstyled)
 import Html.Styled.Attributes exposing (class, css)
 import Json.Decode as Decode
 import Resume
-import Theme exposing (bBoxBlock, email, entry, github, globe, h, h1l, h2l, h2r, h3l, leftWidth, linkedin, mbElement, phone, rightWidth, telegram, theme, twitter, whatsapp, xTwitter)
+import Theme exposing (bBoxBlock, email, entry, github, globe, h, h1l, h2l, h2r, h3l2, leftWidth, linkedin, mbElement, phone, rightWidth, telegram, theme, twitter, whatsapp, xTwitter)
 
 
 
@@ -385,7 +385,7 @@ viewBasics basics =
             ]
         ]
         [ viewMaybe viewName basics.name
-        , viewMaybe viewLabel basics.label
+        , viewMaybe viewLabels basics.labels
         , viewContact basics
         ]
 
@@ -395,9 +395,29 @@ viewName name =
     h1l name
 
 
-viewLabel : String -> Html Msg
+viewLabels : Resume.Labels -> Html Msg
+viewLabels labels =
+    div [] <| List.map viewLabel labels
+
+
+viewLabel : Resume.Label -> Html Msg
 viewLabel label =
-    span [ css [ mbElement, bBoxBlock ] ] [ h3l label ]
+    let
+        name =
+            Maybe.withDefault "" label.name
+
+        url =
+            Maybe.withDefault "" label.url
+    in
+    span
+        [ css
+            [ -- mbElement,
+              bBoxBlock
+            ]
+        ]
+        [ -- h3l name
+          h3l2 url name
+        ]
 
 
 viewContact : Resume.Basics -> Html Msg

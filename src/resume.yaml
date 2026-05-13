@@ -2,7 +2,12 @@
 basics:
   # name: Lucas Fernando C. Nunes
   name: Lucas F. C. Nunes
-  label: IT Generalist
+  labels:
+    - name: IT Generalist
+      url: https://en.wikipedia.org/wiki/Information_technology_generalist
+    # - name: IT Supervisor
+    #   url: "https://en.wikipedia.org/wiki/Supervisor"
+    #   url: "https://jobdescription.org/job-descriptions/information-technology-supervisor-job-description-it-industry"
   picture: ""
   website: https://lucasfcnunes.com
   summary: ""
