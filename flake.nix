@@ -1,17 +1,21 @@
 {
   inputs = {
     nixpkgs.url = "nixpkgs/nixpkgs-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
   };
   outputs =
     {
       self,
       nixpkgs,
-      flake-utils,
       ...
     }:
     let
       infrastructureVersion = if (self ? shortRev) then self.shortRev else "dev";
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
     in
     {
       overlay =
@@ -20,45 +24,42 @@
           pkgs = nixpkgs.legacyPackages.${prev.system};
         in
         rec { };
-    }
-    // flake-utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = import nixpkgs {
-          overlays = [ self.overlay ];
-          inherit system;
-        };
-        devDeps =
-          with pkgs;
-          [
-            nodejs
-            go-task
-            # x11-xkb-utils
-            # x11-apps
-            # clang
-            # libdbus-1-dev
-            # # libgtk2.0-dev
-            # libnotify-dev
-            # libgconf2-dev
-            # libasound2-dev
-            # libcap-dev
-            # libcups2-dev
-            # libxtst-dev
-            # libxss1
-            # libnss3-dev
-          ]
-          ++ lib.optionals pkgs.stdenv.isLinux [
-            xvfb-run
-          ];
-      in
-      rec {
-        # `nix develop`
-        devShell = pkgs.mkShell {
-          buildInputs = devDeps;
-          shellHook = ''
-            export DISPLAY=:9.0
-          '';
-        };
-      }
-    );
+      devShells = builtins.listToAttrs (
+        builtins.map (system: {
+          name = system;
+          value =
+            let
+              pkgs = import nixpkgs {
+                inherit system;
+                overlays = [ self.overlay ];
+                # TODO: don't use unfree packages
+                config.allowUnfreePredicate =
+                  pkg:
+                  builtins.elem (pkgs.lib.getName pkg) [
+                    "steam-original"
+                    "steam-run"
+                  ];
+              };
+              devDeps =
+                with pkgs;
+                [
+                  nodejs
+                  go-task
+                ]
+                ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
+                  steam-run
+                  xvfb-run
+                ];
+            in
+            {
+              default = pkgs.mkShell {
+                buildInputs = devDeps;
+                shellHook = ''
+                  export DISPLAY=:9.0
+                '';
+              };
+            };
+        }) systems
+      );
+    };
 }

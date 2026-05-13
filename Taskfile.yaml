@@ -12,8 +12,11 @@ tasks:
     dir: "{{.GIT_ROOT_PATH}}/dist/"
     env:
       DISPLAY: :9.0
+    deps:
+      - build
     sources:
-      - ./index.html
+      - ./**
+      - exclude: "*.pdf"
     generates:
       - ./resume.pdf
     vars:
@@ -22,14 +25,21 @@ tasks:
           if command -v xvfb-run >/dev/null 2>&1; then
             echo 'xvfb-run'
           elif command -v nix >/dev/null 2>&1; then
-            echo 'nix develop --command -- xvfb-run'
+            echo 'nix develop --command -- steam-run xvfb-run'
           else
             echo ''
           fi
     cmds:
+      - pwd
+      - ls -la
       - >-
-        {{.RENDER_PDF_CMD_PREFIX}} npx electron-pdf './index.html' './resume.pdf'
+        {{.RENDER_PDF_CMD_PREFIX}} npx electron-pdf "$(pwd)/index.html" "$(pwd)/resume.pdf"
   build:
+    sources:
+      - ./src/**
+    generates:
+      - ./dist/**
+      - exclude: "*.pdf"
     cmds:
       - npx parcel build --public-url "./" --no-scope-hoist src/index.html
   dev:
