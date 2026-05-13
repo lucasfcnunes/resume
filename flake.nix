@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
   };
   outputs =
     {
@@ -13,8 +13,8 @@
       systems = [
         "x86_64-linux"
         "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
+        # "x86_64-darwin"
+        # "aarch64-darwin"
       ];
     in
     {
@@ -36,8 +36,7 @@
                 config.allowUnfreePredicate =
                   pkg:
                   builtins.elem (pkgs.lib.getName pkg) [
-                    "steam-original"
-                    "steam-run"
+                    "steam-unwrapped"
                   ];
               };
               devDeps =
@@ -49,13 +48,22 @@
                 ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
                   steam-run
                   xvfb-run
+                  nspr
+                  nss
                 ];
             in
             {
               default = pkgs.mkShell {
                 buildInputs = devDeps;
                 shellHook = ''
-                  export DISPLAY=:9.0
+                  # export DISPLAY=:9.0
+                  export LD_LIBRARY_PATH=${
+                    with pkgs;
+                    lib.makeLibraryPath [
+                      nspr
+                      nss
+                    ]
+                  }:$LD_LIBRARY_PATH
                 '';
               };
             };

@@ -10,8 +10,8 @@ tasks:
   render-pdf:
     # TODO: improve this task
     dir: "{{.GIT_ROOT_PATH}}/dist/"
-    env:
-      DISPLAY: :9.0
+    # env:
+    #   DISPLAY: :9.0
     deps:
       - build
     sources:
@@ -23,9 +23,9 @@ tasks:
       RENDER_PDF_CMD_PREFIX:
         sh: |
           if command -v xvfb-run >/dev/null 2>&1; then
-            echo 'xvfb-run'
+            echo 'xvfb-run -a'
           elif command -v nix >/dev/null 2>&1; then
-            echo 'nix develop --command -- steam-run xvfb-run'
+            echo 'nix develop --command -- steam-run env TMPDIR=/tmp xvfb-run -a'
           else
             echo ''
           fi
